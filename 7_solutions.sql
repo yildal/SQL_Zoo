@@ -58,7 +58,7 @@ movie.id IN(SELECT movie.id FROM(movie JOIN casting ON movie.id=movieid) JOIN ac
 
 --14. Obtain a list, in alphabetical order, of actors who've had at least 30 starring roles.
 
-SELECT name FROM (actor JOIN casting ON actorid = actor.id) JOIN movie ON movieid = movie.id WHERE ord = 1 AND actor.id = actorid GROUP BY name HAVING count(*) >= 30;
+SELECT name FROM (actor JOIN casting ON actorid = actor.id) JOIN movie ON movieid = movie.id WHERE ord = 1 GROUP BY name HAVING count(*) >= 30;
 
 --15. List the films released in the year 1978 ordered by the number of actors in the cast.
 
